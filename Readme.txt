@@ -1,3 +1,3 @@
 # D'Amico Technologies
 
-[D'Amico Technologies](https://www.damiotech.io "damicotech.io")
+[damicotech.io](https://www.damiotech.io "D'Amico Technologies")
