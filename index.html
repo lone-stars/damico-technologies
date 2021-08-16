@@ -25,6 +25,11 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
 
   <!-- =======================================================
   * Template Name: eStartup - v4.0.1
@@ -305,12 +310,12 @@
         <div class="section-title text-center">
 
           <h2>Team Members</h2>
-          <p class="separator">Meet the wizards behind the magic 🪄</p>
-        </div>
+          <!-- <p class="separator">Meet the wizards behind the magic 🪄</p>
+        </div> -->
 
         <div class="row">
 
-          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-md-6 col-md-4 col-lg-3 container-fluid" data-aos="zoom-in" data-aos-delay="100">
             <div class="team-block bottom">
               <img src="assets/img/team/ceo-lou.jpg" class="img-responsive" alt="img">
               <div class="team-content">
@@ -325,22 +330,22 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+          <!-- <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
             <div class="team-block bottom">
               <img src="assets/img/team/cto-sebas.jpg" class="img-responsive" alt="img">
               <div class="team-content">
                 <ul class="list-unstyled">
                   <!-- <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                  <li><a href="#"><i class="bi bi-twitter"></i></a></li> -->
+                  <li><a href="#"><i class="bi bi-twitter"></i></a></li> 
                   <li><a href="https://www.linkedin.com/in/sebastianchang/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
                 </ul>
                 <span>CTO</span>
                 <h4>Sebastain Chang</h4>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+          <!-- <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
             <div class="team-block bottom">
               <img src="assets/img/team/dixie.jpg" class="img-responsive" alt="img">
               <div class="team-content">
@@ -348,14 +353,14 @@
                   <li><a href="#"><i class="bi bi-facebook"></i></a></li>
                   <li><a href="#"><i class="bi bi-twitter"></i></a></li>
                   <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                </ul> -->
+                </ul>
                 <span>Intern</span>
                 <h4>Dixie</h4>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+          <!-- <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
             <div class="team-block bottom">
               <img src="assets/img/team/june.jpg" class="img-responsive" alt="img">
               <div class="team-content">
@@ -363,12 +368,12 @@
                   <li><a href="#"><i class="bi bi-facebook"></i></a></li>
                   <li><a href="#"><i class="bi bi-twitter"></i></a></li> 
                   <li><a href="#"><i class="bi bi-linkedin"></i></a></li> 
-                </ul> -->
+                </ul>
                 <span>Intern</span>
                 <h4>June</h4>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
       </div>
@@ -645,26 +650,39 @@
 
           <div class="col-lg-5 col-md-8">
             <div class="form">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <!-- Start Contact Form -->
+              <form role="form" id="contactForm" class="contact-form" data-toggle="validator" class="shake">
                 <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <div class="controls">
+                    <input type="text" id="name" class="form-control" placeholder="Name" required data-error="Please enter your name">
+                    <div class="help-block with-errors"></div>
+                  </div>
                 </div>
-                <div class="form-group mt-3">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                <div class="form-group">
+                  <div class="controls">
+                    <input type="email" class="email form-control" id="email" placeholder="Email" required data-error="Please enter your email">
+                    <div class="help-block with-errors"></div>
+                  </div>
                 </div>
-                <div class="form-group mt-3">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <div class="form-group">
+                  <div class="controls">
+                    <input type="text" id="msg_subject" class="form-control" placeholder="Subject" required data-error="Please enter your message subject">
+                    <div class="help-block with-errors"></div>
+                  </div>
                 </div>
-                <div class="form-group mt-3">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <div class="form-group">
+                  <div class="controls">
+                    <textarea id="message" rows="7" placeholder="Massage" class="form-control" required data-error="Write your message"></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>  
                 </div>
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
-              </form>
+
+                <button type="submit" id="submit" class="btn btn-effect"><i class="fa fa-check"></i> Send Message</button>
+                <div id="msgSubmit" class="h3 text-center hidden"></div> 
+                <div class="clearfix"></div>   
+
+              </form>     
+              <!-- End Contact Form -->            
             </div>
           </div>
         </div>
